@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* light theme */
+  --dropdown-background: #fff;
+  --dropdown-text-color: #000;
+  --dropdown-hover-color: #eee;
+  --dropdown-border-color: #caced1;
+  --dropdown-border-radius: 0.25em;
+  --dropdown-icon-color: #000;
+  --background-color: #eee;
+  --text-color: #000;
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle farthest-side,
+    rgb(0, 227, 243),
+    transparent
+  );
+}
+.custom-select {
+  min-width: 300px;
+  position: relative;
+}
+.custom-select select {
+  appearance: none;
+  width: 100%;
+  padding: 10px 16px;
+  background-color: var(--dropdown-background);
+  border: 1px solid var(--dropdown-border-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.custom-select select:hover {
+  background-color: var(--dropdown-hover-color);
+}
+
+.custom-select::before {
+  --size: 0.5rem;
+  position: absolute;
+  content: "";
+  right: 10px;
+  pointer-events: none;
+}
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid var(--dropdown-icon-color);
+  top: 40%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dropdown-background: #000;
+    --dropdown-text-color: #fff;
+    --dropdown-hover-color: #222;
+    --dropdown-border-color: #555;
+    --dropdown-border-radius: 0.25em;
+    --dropdown-icon-color: #fff;
+    --background-color: #000;
+    --text-color: #fff;
+  }
+}
